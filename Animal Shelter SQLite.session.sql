@@ -1,0 +1,1 @@
+SELECT count(*) FROM my_shelter_Adopters;

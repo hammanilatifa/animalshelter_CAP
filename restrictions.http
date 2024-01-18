@@ -1,0 +1,27 @@
+
+GET http://localhost:4004/odata/v4/catalog-pets/Pets
+###
+GET http://localhost:4004/odata/v4/catalog-pets/Pets?$filter=type%20eq%20%27Dog%27
+###
+POST http://localhost:4004/odata/v4/catalog-pets/Pets
+Content-Type: application/json
+
+{
+    "ID": 22,
+     "type" : "Cat",
+     "name" : "Temu",
+     "gender" : "Male",
+     "age" : "3 weeks",
+     "adopter_CNI" : "TT3124"
+    }
+
+###
+POST http://localhost:4004/odata/v4/catalog-pets/Adopters
+Content-Type: application/json
+
+{
+    "CNI": "TT3124",
+    "firstName": "name",
+    "lastName": "lname",
+    "telephone": "555-1234"
+}

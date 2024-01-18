@@ -1,0 +1,21 @@
+ID,TYPE,NAME,GENDER,AGE,ISVACCINATED,ISADOPTED,ADOPTER_CNI
+000001,Cat,Domestic Shorthair Mix,Male,7 months,1,0,EF5678
+000002,Dog,Border Collie Mix,Female,4 weeks,0,0,OP2345
+000003,Dog,Pit Bull Mix,Male,2 months,1,0,EF9876
+000004,Dog,Saluki,Male,2 years,1,1,CD9876
+000005,Cat,S0wshoe Mix,Male,2 months,0,0,MN8765
+000006,Dog,Pit Bull Mix,Female,5 months,0,0,AB8765
+000007,Dog,Pit Bull Mix,Female,2 years,1,1,AB1234
+000008,Cat,Siamese Mix,Female,2 years,1,1,IJ8765
+000009,Dog,Anatolian Shepherd Mix,Male,3 months,0,0,ST3456
+000010,Dog,Pekingese Mix,Male,3 years,1,0,GH5432
+000011,Dog,Chihuahua Shorthair,Female,2 years,1,1,KL5432
+000012,Cat,Domestic Shorthair Mix,Female,3 weeks,0,0,CD5678
+000013,Cat,Maine Coon Mix,Male,1 year,1,1,IJ2345
+000014,Dog,Labrador Retriever Mix,Male,8 weeks,0,0,YZ4321
+000015,Cat,Ragdoll Mix,Male,5 months,1,0,UV7890
+000016,Dog,German Shepherd,Female,1 year,1,1,GH4321
+000017,Dog,Dachshund Mix,Male,4 months,0,0,KL7890
+000018,Cat,Bengal Mix,Female,6 months,1,0,WX2345
+000019,Dog,Shih Tzu Mix,Male,1.5 years,1,1,QR6789
+000020,Cat,Persian Mix,Female,4 years,1,0,MN8765

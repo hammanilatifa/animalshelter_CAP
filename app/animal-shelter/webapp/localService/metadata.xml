@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="CatalogPets" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Pets" EntityType="CatalogPets.Pets">
+                    <NavigationPropertyBinding Path="adopter" Target="Adopters"/>
+                </EntitySet>
+                <EntitySet Name="Adopters" EntityType="CatalogPets.Adopters">
+                    <NavigationPropertyBinding Path="pets" Target="Pets"/>
+                </EntitySet>
+            </EntityContainer>
+            <EntityType Name="Pets">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="type" Type="Edm.String"/>
+                <Property Name="name" Type="Edm.String"/>
+                <Property Name="gender" Type="Edm.String"/>
+                <Property Name="age" Type="Edm.String"/>
+                <Property Name="isVaccinated" Type="Edm.Binary"/>
+                <Property Name="isAdopted" Type="Edm.Binary"/>
+                <NavigationProperty Name="adopter" Type="CatalogPets.Adopters" Partner="pets">
+                    <ReferentialConstraint Property="adopter_CNI" ReferencedProperty="CNI"/>
+                </NavigationProperty>
+                <Property Name="adopter_CNI" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="Adopters">
+                <Key>
+                    <PropertyRef Name="CNI"/>
+                </Key>
+                <Property Name="CNI" Type="Edm.String" Nullable="false"/>
+                <Property Name="firstName" Type="Edm.String"/>
+                <Property Name="lastName" Type="Edm.String"/>
+                <Property Name="telephone" Type="Edm.String"/>
+                <NavigationProperty Name="pets" Type="CatalogPets.Pets" Partner="adopter">
+                    <ReferentialConstraint Property="CNI" ReferencedProperty="adopter_CNI"/>
+                </NavigationProperty>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,44 @@
+{
+    "name": "animal-shelter",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/cds": "^7",
+        "express": "^4",
+        "sqlite3": "^5.1.7"
+    },
+    "devDependencies": {
+        "@cap-js/sqlite": "^1",
+        "@sap/cds-dk": "^7",
+        "@sap/ux-specification": "^1.120.1",
+        "sqlite3": "5.1.7",
+        "rimraf": "^3.0.2"
+    },
+    "scripts": {
+        "start": "cds-deploy && cds-serve",
+        "watch-animal-shelter": "cds watch --open animal-shelter/webapp/index.html?sap-ui-xx-viewCache=false",
+        "undeploy": "cf undeploy animal-shelter --delete-services --delete-service-keys --delete-service-brokers",
+        "build": "rimraf resources mta_archives && mbt build --mtar archive",
+        "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+    },
+    "sapux": [
+        "app/animal-shelter"
+    ],
+    "cds": {
+        "requires": {
+          "db": {
+            "kind": "sqlite",
+            "model": [ "db/", "srv/", "app/" ],
+            "credentials": {
+              "database": ":memory:"
+            }
+          }
+        },
+        "features": {
+          "in_memory_db": true
+        }
+      }
+}
